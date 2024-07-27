@@ -19,4 +19,5 @@ Rails.application.routes.draw do
 
   resources :meals
   resources :activities
+  get "results" => "users#results", as: :results
 end
