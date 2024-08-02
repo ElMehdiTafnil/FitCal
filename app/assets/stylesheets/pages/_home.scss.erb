@@ -1,0 +1,317 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.home-header .logo h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #cce6ff;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Black background */
+    z-index: 1; /* Ensure it is below the content */
+}
+
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin: 0 0 20px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: #0056b3;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: #003d80;
+}
+
+.home-section {
+  width: 100%;
+  height: 100vh;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home-section.how-it-works {
+  background-color: #ffffff;
+}
+
+.home-section.features {
+  background-color: #f4f4f4;
+}
+
+.home-section.testimonials {
+  background-color: #ffffff;
+}
+
+.h2 {
+  font-size: 32px;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.background-clip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.background-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('<%= asset_path("fitcall.gif") %>') repeat; /* Ensure the background image is repeated */
+    opacity: 0.2; /* Set the opacity to 60% */
+    z-index: 1; /* Ensure the background is behind the content */
+  }
+
+.how-it-works{
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  height: 100vh; /* Set the height to 100% of the viewport */
+  display: flex; /* Use flexbox to center content */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.how-it-works .steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+ h2, .steps {
+    position: relative;
+    z-index: 2; /* Ensure the text is above the pseudo-element */
+  }
+
+.step {
+  background: transparent;
+  width: 45%;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.step h3 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 16px;
+  color: white;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.features {
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  height: 100vh; /* Set the height to 100% of the viewport */
+  display: flex; /* Use flexbox to center content */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.features .feature-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.feature {
+  width: 30%;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #e7f3ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature p {
+  font-size: 18px;
+  color: #333;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.testimonials .testimonial {
+  margin-bottom: 20px;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  padding: 20px;
+  background-color: #e7f3ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer nav ul li {
+  margin-left: 15px;
+}
+
+footer nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+  color: #cce6ff;
+}
+
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .background-clip {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .background-clip {
+    width: auto;
+    height: 100%;
+  }
+}
