@@ -12,14 +12,18 @@
             </ul>
         </nav>
     </header>
-    <section class="hero home-section">
+    <section class="hero">
+      <video autoplay loop muted plays-inline class="background-clip">
+        <source src="<%= asset_path('background-video.mp4') %>" type="video/mp4">
+      </video>
         <div class="hero-text">
             <h1>Your Ultimate Fitness Companion</h1>
             <p>Comprehensive tracking, tailored advice, and seamless integration</p>
             <a href="#" class="cta-button">Start Your Journey</a>
         </div>
     </section>
-    <section class="how-it-works home-section">
+    <section class="how-it-works">
+      <div class="background-gif"></div>
         <h2>How It Works</h2>
         <div class="steps">
             <div class="step">
@@ -40,7 +44,8 @@
             </div>
         </div>
     </section>
-    <section class="features home-section">
+    <section class="features">
+      <div class="background-gif"></div>
         <h2>Features</h2>
         <div class="feature-boxes">
             <div class="feature">

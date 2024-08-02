@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def calculate_bmr(user)
     # Using Mifflin-St Jeor Equation
-    10 * user.weight + 6.25 * user.height - 5 * user.age + 5 # for men
+    (10 * user.weight) + (6.25 * user.height) - (5 * user.age) + 5 # for men
   end
 
   def calculate_tdee(bmr, activity_level)
