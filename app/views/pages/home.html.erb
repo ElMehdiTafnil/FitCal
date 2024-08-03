@@ -1,17 +1,4 @@
-    <header class = "home-header">
-        <div class="logo">
-            <h1>FitCal</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+ 
     <section class="hero">
       <video autoplay loop muted plays-inline class="background-clip">
         <source src="<%= asset_path('background-video.mp4') %>" type="video/mp4">
@@ -19,7 +6,7 @@
         <div class="hero-text">
             <h1>Your Ultimate Fitness Companion</h1>
             <p>Comprehensive tracking, tailored advice, and seamless integration</p>
-            <%= link_to 'Start Your Journey', new_user_registration_path, class: 'cta-button' %>
+            <%= link_to 'Start Your Journey',  new_activity_path, class: 'cta-button' %>
         </div>
     </section>
     <section class="how-it-works">
