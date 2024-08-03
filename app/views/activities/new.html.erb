@@ -1,31 +1,32 @@
-   <div id="activities">
-      <div class="container" >
-        <h1>Enter Your Details</h1>
-      <%= simple_form_for current_user, url: user_path(current_user), method: :patch do |form| %>
-        <div>
-          <%= form.input :age, input_html: { required: true }, as: :integer, label: 'Age' %>
-        </div>
+<div id="activities">
+  <div class="container">
+    <h1>Enter Your Details</h1>
+    <%= simple_form_for current_user, url: user_path(current_user), method: :patch do |form| %>
+      <div>
+        <%= form.input :age, input_html: { required: true }, as: :integer, label: 'Age' %>
+      </div>
 
-        <div>
-          <%= form.input :height, input_html: { required: true }, as: :integer, label: 'Height (cm)' %>
-        </div>
+      <div>
+        <%= form.input :height, input_html: { required: true }, as: :integer, label: 'Height (cm)' %>
+      </div>
 
-        <div>
-          <%= form.input :weight, input_html: { required: true }, as: :integer, label: 'Weight (kg)' %>
-        </div>
+      <div>
+        <%= form.input :weight, input_html: { required: true }, as: :integer, label: 'Weight (kg)' %>
+      </div>
 
-        <div>
-          <%= form.input :activity_level, input_html: { required: true }, collection: [
-            ['Sedentary (little or no exercise)', 'sedentary'],
-             ['Lightly active (light exercise/sports 1-3 days/week)', 'light'],
-              ['Moderately active (moderate exercise/sports 3-5 days/week)', 'moderate'],
-              ['Active (hard exercise/sports 6-7 days a week)', 'active'],
-              ['Very active (very hard exercise/sports & physical job)', 'very_active']], label: 'Level of Activity' %>
-        </div>
+      <div>
+        <%= form.input :activity_level, input_html: { required: true }, collection: [
+          ['Sedentary (little or no exercise)', 'sedentary'],
+          ['Lightly active (light exercise/sports 1-3 days/week)', 'light'],
+          ['Moderately active (moderate exercise/sports 3-5 days/week)', 'moderate'],
+          ['Active (hard exercise/sports 6-7 days a week)', 'active'],
+          ['Very active (very hard exercise/sports & physical job)', 'very_active']
+        ], label: 'Level of Activity' %>
+      </div>
 
-        <div>
-          <%= form.submit 'Submit', class: 'button' %>
-        </div>
-      <% end %>
-    </div>
+      <div>
+        <%= form.submit 'Submit', class: 'button' %>
+      </div>
+    <% end %>
+  </div>
 </div>

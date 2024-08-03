@@ -1,23 +1,27 @@
 class UsersController < ApplicationController
-  def results
-    # Get the user's profile details from the database
+  before_action :authenticate_user!
+
+  def edit
     @user = current_user
-    # Calculate the user's BMR
-    @bmr = calculate_bmr(@user)
-    # Calculate the user's TDEE
-    @tdee = calculate_tdee(@bmr, @user.activity_level)
-    # Calculate the user's macronutrient requirements
-    @macronutrients = calculate_macronutrients(@tdee)
   end
 
   def update
-    # Save user profile details to the database
-    if current_user.update(user_params)
-      # Redirect to the results page with query parameters
-      redirect_to results_path
+    @user = current_user
+
+    if @user.update(user_params)
+      calculate_and_redirect(@user)
     else
-      render :new
+      render :edit
     end
+  end
+
+  def results
+    @user = current_user
+    @bmr = calculate_bmr(@user)
+    @tdee = calculate_tdee(@bmr, @user.activity_level)
+    @macronutrients = calculate_macronutrients(@tdee)
+    @macronutrients_cut = calculate_macronutrients(@tdee * 0.8)
+    @macronutrients_bulk = calculate_macronutrients(@tdee * 1.2)
   end
 
   private
@@ -25,9 +29,18 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:age, :height, :weight, :activity_level)
   end
+  
+  def calculate_and_redirect(user)
+    @bmr = calculate_bmr(user)
+    @tdee = calculate_tdee(@bmr, user.activity_level)
+    @macronutrients = calculate_macronutrients(@tdee)
+    @macronutrients_cut = calculate_macronutrients(@tdee * 0.8)
+    @macronutrients_bulk = calculate_macronutrients(@tdee * 1.2)
+
+    redirect_to results_user_path(user)
+  end
 
   def calculate_bmr(user)
-    # Using Mifflin-St Jeor Equation
     (10 * user.weight) + (6.25 * user.height) - (5 * user.age) + 5 # for men
   end
 
