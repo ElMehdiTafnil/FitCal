@@ -19,7 +19,7 @@
         <div class="hero-text">
             <h1>Your Ultimate Fitness Companion</h1>
             <p>Comprehensive tracking, tailored advice, and seamless integration</p>
-            <a href="#" class="cta-button">Start Your Journey</a>
+            <%= link_to 'Start Your Journey', new_user_registration_path, class: 'cta-button' %>
         </div>
     </section>
     <section class="how-it-works">
@@ -31,8 +31,8 @@
                 <p>Create your account and set up your profile with your fitness goals.</p>
             </div>
             <div class="step">
-                <h3>Step 2: Track Your Meals</h3>
-                <p>Log your daily food intake and get real-time calorie counts.</p>
+                <h3>Step 2: Calories requirements</h3>
+                <p>Learn how many calories you burn every day</p>
             </div>
             <div class="step">
                 <h3>Step 3: Monitor Progress</h3>
@@ -40,7 +40,7 @@
             </div>
             <div class="step">
                 <h3>Step 4: Get Customized Plans</h3>
-                <p>Receive personalized workout and meal plans based on your data.</p>
+                <p>Receive personalized meal plans based on your data.</p>
             </div>
         </div>
     </section>
@@ -52,7 +52,7 @@
                 <p>Real-time calorie tracking</p>
             </div>
             <div class="feature">
-                <p>Personalized workout plans</p>
+                <p>Personalized meal plans</p>
             </div>
             <div class="feature">
                 <p>Comprehensive progress reports</p>
@@ -65,15 +65,31 @@
             </div>
         </div>
     </section>
-    <section class="testimonials home-section">
-        <h2>Testimonials</h2>
-        <div class="testimonial">
-            <p>"FitCal has transformed my fitness journey! The personalized plans are amazing." - Jane D.</p>
-        </div>
-        <div class="testimonial">
-            <p>"I love how easy it is to track my meals and see my progress. Highly recommend!" - John S.</p>
-        </div>
-    </section>
+
+  <div class="slider">
+    <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+    <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+    <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+    <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+    <div class="slider__inner">
+      <div class="slider__contents"><img height="128" width="128" src="http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128" alt="Cloud Chen" class="avatar-img">
+        <h2 class="slider__caption">Jamie L -Fitness Enthusiast</h2>
+        <p class="slider__txt">This website has been a game-changer for me! The real-time calorie tracking feature is incredibly accurate and easy to use. I've been able to stay on top of my fitness goals like never before. Highly recommend it!</p>
+      </div>
+      <div class="slider__contents"><img height="128" width="128" src="http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128" alt="Cloud Chen" class="avatar-img">
+        <h2 class="slider__caption">Alex R -Health-Conscious Foodie</h2>
+        <p class="slider__txt">I love the personalized meal plans. They are tailored to my dietary needs and preferences, making it so much easier to eat healthy without feeling deprived. The expert tips and advice have also been super helpful in keeping me motivated.</p>
+      </div>
+      <div class="slider__contents"><img height="128" width="128" src="http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128" alt="Cloud Chen" class="avatar-img">
+        <h2 class="slider__caption">Taylor M -Aspiring Athlete</h2>
+        <p class="slider__txt">The comprehensive progress reports are fantastic. I can see my improvements over time, which keeps me motivated to push harder. The seamless app integration makes tracking my workouts and meals a breeze. Best fitness tool I've ever used!</p>
+      </div>
+      <div class="slider__contents"><img height="128" width="128" src="http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128" alt="Cloud Chen" class="avatar-img">
+        <h2 class="slider__caption">Casey B -Busy Professional</h2>
+        <p class="slider__txt">Expert advice and tips have made a huge difference in my fitness journey. The support from this website has helped me understand my body's needs and how to meet them effectively. I've never felt more in control of my health and fitness.</p>
+      </div>
+    </div>
+  </div>
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 FitCal. All rights reserved.</p>
