@@ -12,7 +12,7 @@
             </ul>
         </nav>
     </header>
-    <section class="hero">
+    <section id="hero" class="section">
       <video autoplay loop muted plays-inline class="background-clip">
         <source src="<%= asset_path('background-video.mp4') %>" type="video/mp4">
       </video>
@@ -22,7 +22,7 @@
             <%= link_to 'Start Your Journey', new_user_registration_path, class: 'cta-button' %>
         </div>
     </section>
-    <section class="how-it-works">
+    <section id="how-it-works" class="section">
       <div class="background-gif"></div>
         <h2>How It Works</h2>
         <div class="steps">
@@ -44,7 +44,7 @@
             </div>
         </div>
     </section>
-    <section class="features">
+    <section id="features" class="section">
       <div class="background-gif"></div>
         <h2>Features</h2>
         <div class="feature-boxes">
@@ -66,7 +66,7 @@
         </div>
     </section>
 
-  <div class="slider">
+  <div id="slider" class="section">
     <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
     <input type="radio" name="slider" title="slide2" class="slider__nav"/>
     <input type="radio" name="slider" title="slide3" class="slider__nav"/>
