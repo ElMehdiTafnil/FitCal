@@ -1,25 +1,81 @@
-<h1>Your Fitness Profile</h1>
-<div class="result">
-  <label>Age:</label>
-  <span><%= @user.age %></span>
-</div>
-<div class="result">
-  <label>Height (cm):</label>
-  <span><%= @user.height %></span>
-</div>
-<div class="result">
-  <label>Weight (kg):</label>
-  <span><%= @user.weight %></span>
-</div>
-<div class="result">
-  <label>BMR:</label>
-  <span><%= @bmr %></span>
-</div>
-<div class="result">
-  <label>TDEE:</label>
-  <span><%= @tdee %></span>
-</div>
+<div class="container">
+    <h2>Macronutrient Requirements</h2>
+    <div class="result">
+      <label>BMR (Basal Metabolic Rate):</label>
+      <span><%= @bmr %></span>
+    </div>
+    <div class="result">
+      <label>TDEE (Total Daily Energy Expenditure):</label>
+      <span><%= @tdee %></span>
+    </div>
+    <div class="macronutrient">
+      <h3>Maintain</h3>
+      <label>Protein (grams):</label>
+      <span><%= @macronutrients[:protein] %></span>
+      <label>Fat (grams):</label>
+      <span><%= @macronutrients[:fat] %></span>
+      <label>Carbs (grams):</label>
+      <span><%= @macronutrients[:carbs] %></span>
+    </div>
+    <div class="macronutrient">
+      <h3>Cut</h3>
+      <label>Protein (grams):</label>
+      <span><%= @macronutrients_cut[:protein] %></span>
+      <label>Fat (grams):</label>
+      <span><%= @macronutrients_cut[:fat] %></span>
+      <label>Carbs (grams):</label>
+      <span><%= @macronutrients_cut[:carbs] %></span>
+    </div>
+    <div class="macronutrient">
+      <h3>Bulk</h3>
+      <label>Protein (grams):</label>
+      <span><%= @macronutrients_bulk[:protein] %></span>
+      <label>Fat (grams):</label>
+      <span><%= @macronutrients_bulk[:fat] %></span>
+      <label>Carbs (grams):</label>
+      <span><%= @macronutrients_bulk[:carbs] %></span>
+    </div>
+    <div class="feedback">
+      <p>Based on your details, these are your daily macronutrient requirements. Keep up the good work and stay active!</p>
+    </div>
+    <div class="vitamins">
+      <h3>Vitamin Recommendations</h3>
+      <p>For optimal health, consider incorporating the following vitamins into your diet:</p>
+      <ul>
+        <li><strong>Vitamin A:</strong> Supports eye health and immune function.</li>
+        <li><strong>Vitamin C:</strong> Boosts the immune system and helps with collagen production.</li>
+        <li><strong>Vitamin D:</strong> Essential for bone health and immune function. Consider supplementation if you have limited sun exposure.</li>
+        <li><strong>Vitamin E:</strong> Acts as an antioxidant, protecting cells from damage.</li>
+        <li><strong>Vitamin K:</strong> Important for blood clotting and bone health.</li>
+        <li><strong>B Vitamins:</strong> Aid in energy production and support brain health. Includes B1 (Thiamine), B2 (Riboflavin), B3 (Niacin), B6 (Pyridoxine), B9 (Folate), and B12 (Cobalamin).</li>
+      </ul>
+    </div>
+    <h2>Update Your Details</h2>
+    <%= simple_form_for current_user, url: user_path(current_user), method: :patch do |form| %>
+      <div>
+        <%= form.input :age, input_html: { required: true }, as: :integer, label: 'Age' %>
+      </div>
 
-<div class="feedback">
-  <p>Based on your details, these are your daily macronutrient requirements. Keep up the good work and stay active!</p>
-</div>
+      <div>
+        <%= form.input :height, input_html: { required: true }, as: :integer, label: 'Height (cm)' %>
+      </div>
+
+      <div>
+        <%= form.input :weight, input_html: { required: true }, as: :integer, label: 'Weight (kg)' %>
+      </div>
+
+      <div>
+        <%= form.input :activity_level, input_html: { required: true }, collection: [
+          ['Sedentary (little or no exercise)', 'sedentary'],
+          ['Lightly active (light exercise/sports 1-3 days/week)', 'light'],
+          ['Moderately active (moderate exercise/sports 3-5 days/week)', 'moderate'],
+          ['Active (hard exercise/sports 6-7 days a week)', 'active'],
+          ['Very active (very hard exercise/sports & physical job)', 'very_active']
+        ], label: 'Level of Activity' %>
+      </div>
+
+      <div>
+        <%= form.submit 'Recalculate', class: 'button' %>
+      </div>
+    <% end %>
+  </div>

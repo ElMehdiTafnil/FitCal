@@ -59,7 +59,7 @@ background-color: #7b8ab8 !important;
 #login  {
   a.ghost {
     border-radius: 20px;
-    background-color: #ff1e00;
+    background-color: #7ca1ff;
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -70,7 +70,7 @@ background-color: #7b8ab8 !important;
     border: 1px solid #FFFFFF;
     &:hover {
       background-color: #ffffff;
-      color: #FF1e00;
+      color: #50b5fe;
     }
   }
 }
@@ -174,9 +174,9 @@ background-color: #7b8ab8 !important;
 }
 
 .overlay {
-	background: #ff1e00;
-	background: -webkit-linear-gradient(to right, #ff1e00, #ff1e00);
-	background: linear-gradient(to right, #FF1e00, #ff1e00);
+	background: #0078FF;
+	background: -webkit-linear-gradient(to right, #0078FF, #0078FF);
+	background: linear-gradient(to right, #0078FF, #0078FF);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
