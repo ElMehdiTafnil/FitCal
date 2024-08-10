@@ -14,7 +14,11 @@
 
   <body data-controller="aos">
 <%= render "shared/flashes" %>
+  <body>
+    <%= render "shared/flashes" %>
+    <%= render "shared/navbar" %>
 
     <%= yield %>
+    
   </body>
 </html>

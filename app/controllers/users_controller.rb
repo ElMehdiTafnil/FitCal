@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def results
     @user = current_user
+    @mealplans = current_user.mealplans
     @bmr = calculate_bmr(@user)
     @tdee = calculate_tdee(@bmr, @user.activity_level)
     @macronutrients = calculate_macronutrients(@tdee)
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:age, :height, :weight, :activity_level)
   end
-  
+
   def calculate_and_redirect(user)
     @bmr = calculate_bmr(user)
     @tdee = calculate_tdee(@bmr, user.activity_level)
