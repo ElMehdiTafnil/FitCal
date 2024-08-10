@@ -50,6 +50,7 @@
         <li><strong>B Vitamins:</strong> Aid in energy production and support brain health. Includes B1 (Thiamine), B2 (Riboflavin), B3 (Niacin), B6 (Pyridoxine), B9 (Folate), and B12 (Cobalamin).</li>
       </ul>
     </div>
+
     <h2>Update Your Details</h2>
     <%= simple_form_for current_user, url: user_path(current_user), method: :patch do |form| %>
       <div>
@@ -78,4 +79,5 @@
         <%= form.submit 'Recalculate', class: 'button' %>
       </div>
     <% end %>
+    <%= raw(@user.week_plan) %>
   </div>
