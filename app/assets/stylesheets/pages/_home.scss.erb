@@ -132,19 +132,9 @@ nav ul li a:hover {
   z-index: -1;
 }
 
-.background-gif {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('<%= asset_path("fitcall.gif") %>') repeat; /* Ensure the background image is repeated */
-    opacity: 0.2; /* Set the opacity to 60% */
-    z-index: 1; /* Ensure the background is behind the content */
-  }
 
 #how-it-works{
-  background-color: black;
+  background: #007bff;
   position: relative;
   overflow: hidden;
   color: white;
@@ -171,23 +161,19 @@ nav ul li a:hover {
 
 
 .step {
- width: 12.5rem;
+ width: 15rem;
  height: 17rem;
  background-color: transparent;
  border-radius: 1rem;
  transition: all 0.4s ease-in;
  box-shadow: 0.4rem 0.4rem 0.6rem #00000040;
- margin: 2rem;
+ margin: 4rem;
  display: flex;
  flex-direction: column;
  align-items: center;
  justify-content: center;
  text-align: center;
  padding: 1rem;
-}
-
-.step:hover {
- transform: translateY(-1.5rem);
  border: white 0.2em solid;
 }
 
@@ -204,7 +190,7 @@ nav ul li a:hover {
 
 
 #features {
-  background-color: black;
+  background: #007bff;
   position: relative;
   overflow: hidden;
   color: white;
@@ -242,7 +228,6 @@ h2, #features {
   background-color: transparent;
   border-radius: 1rem;
   transition: all 0.4s ease-in;
-  box-shadow: 0.4rem 0.4rem 0.6rem #00000040;
   margin: 2rem;
   display: flex;
   flex-direction: column;
