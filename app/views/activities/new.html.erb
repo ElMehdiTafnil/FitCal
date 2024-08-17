@@ -24,6 +24,14 @@
         ], label: 'Level of Activity' %>
       </div>
 
+<div>
+    Gender
+    <%= form.input :gender, input_html: { required: true }, collection: [
+      ['Male', 'male'],
+      ['Female', 'female']
+    ], as: :radio_buttons, label: 'Gender' %>
+  </div>
+
       <div>
         <%= form.submit 'Submit', class: 'button' %>
       </div>
