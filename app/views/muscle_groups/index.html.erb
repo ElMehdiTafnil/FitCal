@@ -1,0 +1,11 @@
+<h1>Select a Muscle Group</h1>
+<div class="muscle-groups">
+  <% @muscle_groups.each do |muscle_group| %>
+    <div class="muscle-group">
+      <%= link_to muscle_group_path(muscle_group) do %>
+        <%= image_tag muscle_group.img_url, alt: muscle_group.name %>
+      <% end %>
+      <p><%= muscle_group.name %></p>
+    </div>
+  <% end %>
+</div>

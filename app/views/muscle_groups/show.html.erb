@@ -1,0 +1,10 @@
+<h1><%= @muscle_group.name %> Workouts</h1>
+<div class="workouts">
+  <% @workouts.each do |workout| %>
+    <div class="workout">
+      <h2><%= workout.name %></h2>
+      <%= image_tag workout.img_url, alt: workout.name %>
+      <p><%= workout.description %></p>
+    </div>
+  <% end %>
+</div>
