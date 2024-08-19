@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_15_192701) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_17_102752) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,6 +38,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_15_192701) do
     t.integer "carbs"
     t.string "fats"
     t.string "integer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "muscle_groups", force: :cascade do |t|
+    t.string "name"
+    t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -101,6 +108,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_15_192701) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "workouts", force: :cascade do |t|
+    t.string "name"
+    t.string "img_url"
+    t.text "description"
+    t.bigint "muscle_group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["muscle_group_id"], name: "index_workouts_on_muscle_group_id"
+  end
+
   add_foreign_key "mealplans", "meals"
   add_foreign_key "mealplans", "users"
   add_foreign_key "objectives", "users"
@@ -108,4 +125,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_15_192701) do
   add_foreign_key "subscriptions", "users"
   add_foreign_key "user_activities", "activities"
   add_foreign_key "user_activities", "users"
+  add_foreign_key "workouts", "muscle_groups"
 end
