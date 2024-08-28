@@ -8,21 +8,21 @@ class UsersController < ApplicationController
   def update
     @user = current_user
 
-    # Print out the parameters to the Rails console
-    puts params.inspect
-
     if @user.update(user_params)
       calculate_and_redirect(@user)
     else
+      # Flash message to notify the user about validation errors
+      flash.now[:alert] = "Please fill out all required fields correctly."
       render :edit
     end
   end
 
+
   def results
     @user = current_user
     @mealplans = current_user.mealplans
-    @bmr = calculate_bmr(@user)
-    @tdee = calculate_tdee(@bmr, @user.activity_level)
+    @bmr = calculate_bmr(@user).round
+    @tdee = calculate_tdee(@bmr, @user.activity_level).round
     @macronutrients = calculate_macronutrients(@tdee)
     @macronutrients_cut = calculate_macronutrients(@tdee * 0.8)
     @macronutrients_bulk = calculate_macronutrients(@tdee * 1.2)
@@ -71,9 +71,9 @@ class UsersController < ApplicationController
 
   def calculate_ideal_weight(height, gender)
     if gender == "male"
-      50 + (0.91 * (height - 152.4))
+      (50 + (0.91 * (height - 152.4))).round(1)
     elsif gender == "female"
-      45.5 + (0.91 * (height - 152.4))
+      (45.5 + (0.91 * (height - 152.4))).round(1)
     else
       0
     end

@@ -18,38 +18,41 @@
       <div class="macronutrient">
         <h3>Maintain</h3>
         <div class="card_content">
-          <label>Protein (grams):</label>
-          <span><%= @macronutrients[:protein] %></span>
-          <label>Fat (grams):</label>
-          <span><%= @macronutrients[:fat] %></span>
-          <label>Carbs (grams):</label>
-          <span><%= @macronutrients[:carbs] %></span>
+          <span><%= @macronutrients[:protein] %>g</span>
+          <label>Protein</label>
+          <span><%= @macronutrients[:fat] %>g</span>
+          <label>Fat</label>
+          <span><%= @macronutrients[:carbs] %>g</span>
+          <label>Carbs</label>
         </div>
       </div>
       <div class="macronutrient">
         <h3>Cut</h3>
         <div class="card_content">
-          <label>Protein (grams):</label>
-          <span><%= @macronutrients_cut[:protein] %></span>
-          <label>Fat (grams):</label>
-          <span><%= @macronutrients_cut[:fat] %></span>
-          <label>Carbs (grams):</label>
-          <span><%= @macronutrients_cut[:carbs] %></span>
+          <span><%= @macronutrients_cut[:protein] %>g</span>
+          <label>Protein</label>
+          <span><%= @macronutrients_cut[:fat] %>g</span>
+          <label>Fat</label>
+          <span><%= @macronutrients_cut[:carbs] %>g</span>
+          <label>Carbs</label>
         </div>
       </div>
       <div class="macronutrient">
         <h3>Bulk</h3>
         <div class="card_content">
-          <label>Protein (grams):</label>
-          <span><%= @macronutrients_bulk[:protein] %></span>
-          <label>Fat (grams):</label>
-          <span><%= @macronutrients_bulk[:fat] %></span>
-          <label>Carbs (grams):</label>
-          <span><%= @macronutrients_bulk[:carbs] %></span>
-          <label>Ideal Weight (kg):</label>
-          <span><%= @ideal_weight %></span>
+          <span><%= @macronutrients_bulk[:protein] %>g</span>
+          <label>Protein</label>
+          <span><%= @macronutrients_bulk[:fat] %>g</span>
+          <label>Fat</label>
+          <span><%= @macronutrients_bulk[:carbs] %>g</span>
+          <label>Carbs</label>
         </div>
         </div>
+      </div>
+      <div class="weight-container">
+        <label>Ideal Weight (kg):</label>
+        <span><%= @ideal_weight %></span>
+        <p>Your ideal body weight is estimated to be <%= @ideal_weight %> kg based on various formulas. These formulas are based on your height and represent averages so don't take them too seriously, especially if you lift weights.</p>
       </div>
     <div class="vitamins">
       <h3>Vitamin Recommendations</h3>
@@ -64,32 +67,40 @@
       </ul>
     </div>
 
-    <h2>Update Your Details</h2>
-    <%= simple_form_for current_user, url: user_path(current_user), method: :patch do |form| %>
-      <div>
-        <%= form.input :age, input_html: { required: true }, as: :integer, label: 'Age' %>
-      </div>
+    <div class="update-details-container">
+  <h2>Update Your Details</h2>
+  <%= form_for current_user, url: user_path(current_user), method: :patch do |form| %>
 
-      <div>
-        <%= form.input :height, input_html: { required: true }, as: :integer, label: 'Height (cm)' %>
-      </div>
+    <div class="recal-textbox">
+      <%= form.label :age, 'Age' %>
+      <%= form.number_field :age, required: true, class: 'form-control' %>
+    </div>
 
-      <div>
-        <%= form.input :weight, input_html: { required: true }, as: :integer, label: 'Weight (kg)' %>
-      </div>
+    <div class="recal-textbox">
+      <%= form.label :height, 'Height (cm)' %>
+      <%= form.number_field :height, required: true, class: 'form-control' %>
+    </div>
 
-      <div>
-        <%= form.input :activity_level, input_html: { required: true }, collection: [
+    <div class="recal-textbox">
+      <%= form.label :weight, 'Weight (kg)' %>
+      <%= form.number_field :weight, required: true, class: 'form-control' %>
+    </div>
+
+    <div class="recal-textbox">
+      <%= form.label :activity_level, 'Level of Activity' %>
+      <%= form.select :activity_level,
+        options_for_select([
           ['Sedentary (little or no exercise)', 'sedentary'],
           ['Lightly active (light exercise/sports 1-3 days/week)', 'light'],
           ['Moderately active (moderate exercise/sports 3-5 days/week)', 'moderate'],
           ['Active (hard exercise/sports 6-7 days a week)', 'active'],
           ['Very active (very hard exercise/sports & physical job)', 'very_active']
-        ], label: 'Level of Activity' %>
-      </div>
+        ]), {}, { required: true, class: 'form-control' } %>
+    </div>
 
-      <div>
-        <%= form.submit 'Recalculate', class: 'button' %>
-      </div>
-    <% end %>
-  </div>
+    <div class="submit-button">
+      <%= form.submit 'Recalculate', class: 'button' %>
+    </div>
+  <% end %>
+</div>
+</div>

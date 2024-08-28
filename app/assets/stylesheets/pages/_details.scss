@@ -9,14 +9,31 @@
 .result, .macronutrient {
   margin-bottom: 20px;
 }
-.result label, .macronutrient label {
+.macronutrient label {
   display: block;
-  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.result label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
   margin-top: 10px;
 }
-.result span, .macronutrient span {
+.macronutrient span {
   display: block;
-  margin-bottom: 10px;
+  font-weight: bold;
+  margin-top: 5px;
+  border-bottom: 1px dotted #ffffff;
+  font-size: 25px;
+}
+
+.result span {
+  display: block;
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 25px;
 }
 .feedback {
   background-color: #e9f7ef;
@@ -24,6 +41,10 @@
   border: 1px solid #d4edda;
   border-radius: 5px;
   color: #155724;
+}
+
+.feedback p {
+  margin: 0;
 }
 .vitamins {
   background-color: #fff3cd;
@@ -55,6 +76,23 @@
   text-decoration: none;
   cursor: pointer;
   border: none;
+}
+
+.weight-container {
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.weight-container label {
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.weight-container p {
+  margin: 0;
+  font-size: 15px;
 }
 
 .result-container {
@@ -137,4 +175,57 @@
 
 .macronutrient:hover h3 {
   scale: 0;
+}
+
+.update-details-container {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  max-width: 400px; /* Restrict width for better centering */
+  margin: 20px auto;
+  padding: 20px; /* Add padding inside the container */
+  background-color: #f2f2f2; /* Optional: Background color */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+.update-details-container h2 {
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Add space below the heading */
+}
+
+.recal-textbox {
+  margin-bottom: 15px; /* Space out the form fields */
+}
+
+.recal-textbox label {
+  display: block; /* Ensure label is on top of the input */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%; /* Make input fields full width */
+  padding: 10px; /* Padding inside input fields */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Border styling */
+  background-color: #ffffff;
+}
+
+.submit-button {
+  text-align: center; /* Center the button */
+  margin-top: 20px; /* Space above the button */
+}
+
+.submit-button .button {
+  padding: 10px 20px; /* Padding inside the button */
+  background-color: #007bff; /* Button background color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* Button text color */
+  font-size: 16px; /* Button text size */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.submit-button .button:hover {
+  background-color: #0056b3; /* Darken button on hover */
 }
