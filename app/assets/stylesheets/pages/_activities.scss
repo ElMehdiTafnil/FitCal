@@ -15,40 +15,76 @@
   background-size: 55px 55px;
 
   .container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Restrict width for better centering */
+    margin: 20px auto; /* Center the container horizontally and add top/bottom margin */
+    padding: 20px; /* Add padding inside the container */
+    background-color: #f2f2f2; /* Optional: Background color */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
   }
-  h1 {
-    text-align: center;
-    color: #333;
+
+  .container h1 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Add space below the heading */
   }
-  label {
-    display: block;
-    margin: 15px 0 5px;
-    color: #555;
+
+  .form-group {
+    margin-bottom: 15px; /* Space out the form fields */
   }
-  input, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+  .form-group label {
+    display: block; /* Ensure label is on top of the input */
+    margin-bottom: 5px; /* Space between label and input */
   }
-  .button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+
+  .form-control {
+    width: 100%; /* Make input fields full width */
+    padding: 10px; /* Padding inside input fields */
+    background-color: #ffffff; /* Change background color to white */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border styling */
+    color: #333; /* Optional: Change text color */
   }
-  .button:hover {
-    background-color: #006bdd;
+
+  .submit-button {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Space above the button */
+  }
+
+  .submit-button .button {
+    width: 100%; /* Make the button full width */
+    padding: 10px; /* Padding inside the button */
+    background-color: #007bff; /* Button background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    color: white; /* Button text color */
+    font-size: 16px; /* Button text size */
+    cursor: pointer; /* Change cursor on hover */
+    text-align: center; /* Center the button text */
+  }
+
+  .submit-button .button:hover {
+    background-color: #0056b3; /* Darken button on hover */
+  }
+  .radio-group {
+    display: flex; /* Align items in a row */
+    justify-content: center; /* Center the radio buttons horizontally */
+    gap: 20px; /* Add space between radio buttons */
+    margin-top: 10px; /* Space between label and radio buttons */
+  }
+
+  .radio-label {
+    display: flex;
+    align-items: center; /* Align radio buttons and labels vertically */
+    font-size: 16px; /* Adjust text size */
+    cursor: pointer; /* Pointer cursor for better UX */
+  }
+
+  .radio-label input[type="radio"] {
+    margin-right: 8px; /* Space between radio button and label */
+  }
+
+  .radio-label input[type="radio"]:checked {
+    accent-color: #007bff; /* Optional: Change radio button color when checked */
   }
 }
