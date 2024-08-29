@@ -1,55 +1,39 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or create!d alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create!_by!(name: genre_name)
-#   end
-chest = MuscleGroup.create! name: 'Chest', img_url: 'muscle_groups/chest/4_chest.png'
- Workout.create! name: 'Dip', img_url: 'muscle_groups/chest/40_chest.png', muscle_group: chest
- Workout.create! name: 'dbp', img_url: 'muscle_groups/chest/41_chest.png', muscle_group: chest
- Workout.create! name: 'ibp', img_url: 'muscle_groups/chest/42_chest.png', muscle_group: chest
+chest = MuscleGroup.create! name: 'Chest', img_url: 'muscle_groups/chest/4_chest.png', description: 'The chest muscles, or pectorals, are crucial for upper body strength and are engaged in movements like pushing and lifting.'
+Workout.create! name: 'Dip', img_url: 'muscle_groups/chest/40_chest-dip.jpg', muscle_group: chest, description: 'Dips are a bodyweight exercise that targets the chest, shoulders, and triceps, improving upper body strength and muscle mass.'
+Workout.create! name: 'Dumbbell Bench Press', img_url: 'muscle_groups/chest/41_dumbbell-bench-press_0.jpg', muscle_group: chest, description: 'The dumbbell bench press focuses on building chest strength and size by allowing for a greater range of motion compared to the barbell version.'
+Workout.create! name: 'Incline Bench Press', img_url: 'muscle_groups/chest/42_incline-bench-press.jpg', muscle_group: chest, description: 'Incline bench press targets the upper portion of the chest and shoulders, helping to create a well-rounded chest appearance.'
 
+abs = MuscleGroup.create! name: 'Abs', img_url: 'muscle_groups/ABS/1_abs.png', description: 'The abdominal muscles, or abs, are key for core stability and strength, supporting movements involving the torso and improving overall balance.'
+Workout.create! name: 'Lying Leg Raise', img_url: 'muscle_groups/ABS/10_lying-leg-raise-1.jpg', muscle_group: abs, description: 'Lying leg raises are an effective exercise for targeting the lower abs and hip flexors, enhancing core strength and definition.'
+Workout.create! name: 'Sit Up', img_url: 'muscle_groups/ABS/11_sit-up.jpg', muscle_group: abs, description: 'Sit-ups are a classic ab exercise that strengthens the entire core, focusing on the rectus abdominis and improving overall core stability.'
+Workout.create! name: 'Weighted Crunch', img_url: 'muscle_groups/ABS/12_weighted-crunch.jpg', muscle_group: abs, description: 'Weighted crunches intensify the traditional crunch by adding resistance, which helps in building stronger and more defined abdominal muscles.'
 
-abs = MuscleGroup.create! name: 'Abs', img_url: 'muscle_groups/ABS/1_abs.png'
- Workout.create! name: 'Lying_Leg_Raise', img_url: 'muscle_groups/ABS/10_lying-leg-raise.jpg', muscle_group: abs
- Workout.create! name: 'Sit_Up', img_url: 'muscle_groups/ABS/11_sit-up.jpg', muscle_group: abs
- Workout.create! name: 'Weighted_Crunch', img_url: 'muscle_groups/ABS/12_weighted-crunch.jpg', muscle_group: abs
+back = MuscleGroup.create! name: 'Back', img_url: 'muscle_groups/back/2_upper-back.png', description: 'The back muscles are essential for posture and overall upper body strength, involved in movements such as pulling and lifting.'
+Workout.create! name: 'Bent Over Rows', img_url: 'muscle_groups/back/20_bent-over-row.jpg', muscle_group: back, description: 'Bent over rows target the middle back, improving posture and back thickness while engaging the lats, rhomboids, and rear delts.'
+Workout.create! name: 'Lat Pull Down', img_url: 'muscle_groups/back/21_lat-pulldown.jpg', muscle_group: back, description: 'Lat pull downs focus on the latissimus dorsi muscles, helping to build a wide back and improve overall upper body strength.'
+Workout.create! name: 'Seated Row', img_url: 'muscle_groups/back/22_seated-row.jpg', muscle_group: back, description: 'Seated rows are great for targeting the entire back, promoting balanced muscle development and improving pulling strength.'
 
+biceps = MuscleGroup.create! name: 'Biceps', img_url: 'muscle_groups/biceps/3_biceps.png', description: 'The biceps muscles are key for upper arm strength and are primarily involved in elbow flexion and lifting movements.'
+Workout.create! name: 'Barbell Curls', img_url: 'muscle_groups/biceps/30_barbell-curl.jpg', muscle_group: biceps, description: 'Barbell curls are a staple exercise for building bicep mass and strength, allowing for heavy loading of the biceps with a fixed grip.'
+Workout.create! name: 'Dumbell Curls', img_url: 'muscle_groups/biceps/31_dumbbell-curl.jpg', muscle_group: biceps, description: 'Dumbbell curls offer a greater range of motion compared to barbell curls, helping to target each bicep individually and improve overall muscle symmetry.'
+Workout.create! name: 'Preacher Dumbell Hammer Curls', img_url: 'muscle_groups/biceps/32_preacher-dumbbell-hammer-curl.jpg', muscle_group: biceps, description: 'Preacher hammer curls isolate the biceps and forearms, promoting balanced arm development and improving arm strength.'
 
-back = MuscleGroup.create! name: 'Back', img_url: 'muscle_groups/back/2_upper-back.png'
- Workout.create! name: 'BOR', img_url: 'muscle_groups/back/20_bent-over-row.jpg', muscle_group: back
- Workout.create! name: 'LPD', img_url: 'muscle_groups/back/21_lat-pulldown.jpg', muscle_group: back
- Workout.create! name: 'SR', img_url: 'muscle_groups/back/22_seated-row.jpg', muscle_group: back
+forearms = MuscleGroup.create! name: 'Forearms', img_url: 'muscle_groups/forearms/5_forearms.png', description: 'Forearm muscles are essential for grip strength and endurance, involved in various activities requiring hand and wrist stability.'
+Workout.create! name: 'Plate Pinch Carry', img_url: 'muscle_groups/forearms/50_plate-pinch-carry.jpg', muscle_group: forearms, description: 'Plate pinch carries enhance grip strength and forearm endurance by holding weight plates with a pinching grip while walking.'
+Workout.create! name: 'Reverse Grip Barbell Curl ez bar', img_url: 'muscle_groups/forearms/51_reverse_grip_barbell-curl-ez-bar.jpg', muscle_group: forearms, description: 'Reverse grip barbell curls target the brachioradialis and forearm muscles, improving grip strength and forearm definition.'
+Workout.create! name: 'Seated Barbell Wrist Curl', img_url: 'muscle_groups/forearms/52_seated-barbell-wrist-curl.jpg', muscle_group: forearms, description: 'Seated barbell wrist curls focus on strengthening the forearm flexors, enhancing wrist stability and overall grip strength.'
 
+quads = MuscleGroup.create! name: 'Quads', img_url: 'muscle_groups/legs/6_quads.png', description: 'The quadriceps muscles are crucial for leg strength and power, involved in movements such as squatting and leg extension.'
+Workout.create! name: 'Barbell Back Squat', img_url: 'muscle_groups/legs/60_barbell-back-squat.jpg', muscle_group: quads, description: 'Barbell back squats are a fundamental exercise for building overall leg strength, targeting the quads, hamstrings, and glutes.'
+Workout.create! name: 'Seated Leg Curl', img_url: 'muscle_groups/legs/61_seated-leg-curl-1.jpg', muscle_group: quads, description: 'Seated leg curls specifically target the hamstrings, promoting balanced leg development and improving overall leg strength.'
+Workout.create! name: 'Standing Machine Calf Raise', img_url: 'muscle_groups/legs/62_standing-machine-calf-raise.jpg', muscle_group: quads, description: 'Standing machine calf raises focus on the calf muscles, enhancing lower leg strength and promoting better balance and stability.'
 
-biceps = MuscleGroup.create! name: 'Biceps', img_url: 'muscle_groups/biceps/3_biceps.png'
- Workout.create! name: 'BC', img_url: 'muscle_groups/biceps/30_bicep-curl.jpg', muscle_group: biceps
- Workout.create! name: 'DC', img_url: 'muscle_groups/biceps/31_dumbbell-curl.jpg', muscle_group: biceps
- Workout.create! name: 'PC', img_url: 'muscle_groups/biceps/32_preacher-curl.jpg',  muscle_group: biceps
+shoulders = MuscleGroup.create! name: 'Shoulders', img_url: 'muscle_groups/shoulders/7_shoulders.png', description: 'The shoulder muscles are key for upper body mobility and strength, involved in various pushing and lifting movements.'
+Workout.create! name: 'Bent Over Cable Rear Delt Fly', img_url: 'muscle_groups/shoulders/70_bent-over-cable-rear-delt-fly.jpg', muscle_group: shoulders, description: 'Bent over cable rear delt flys target the rear deltoids, improving shoulder definition and promoting balanced shoulder development.'
+Workout.create! name: 'Dumbbell Lateral Raise', img_url: 'muscle_groups/shoulders/71_dumbbell-lateral-raise.jpg', muscle_group: shoulders, description: 'Dumbbell lateral raises focus on the side deltoids, enhancing shoulder width and overall upper body aesthetics.'
+Workout.create! name: 'Military Overhead Press', img_url: 'muscle_groups/shoulders/72_military-overhead-press.jpg', muscle_group: shoulders, description: 'The military overhead press is a key exercise for building shoulder strength and size, engaging the deltoids, triceps, and upper chest.'
 
-
-forearms = MuscleGroup.create! name: 'Forearms', img_url: 'muscle_groups/forearms/5_forearms.png'
- Workout.create! name: 'PPC', img_url: 'muscle_groups/forearms/50_plate-pinch-carry.jpg', muscle_group: forearms
- Workout.create! name: 'RGB', img_url: 'muscle_groups/forearms/51_reverse_grip_barbell.jpg', muscle_group: forearms
- Workout.create! name: 'SU', img_url: 'muscle_groups/forearms/11_sit-up.jpg', muscle_group: forearms
-
-
-quads = MuscleGroup.create! name: 'Quads', img_url: 'muscle_groups/legs/6_quads.png'
- Workout.create! name: 'BBS', img_url: 'muscle_groups/legs/60_barbell-back-squat.jpg', muscle_group: quads
- Workout.create! name: 'SLC', img_url: 'muscle_groups/legs/61_seated-leg-curl.jpg', muscle_group: quads
- Workout.create! name: 'SMCR', img_url: 'muscle_groups/legs/62_standing-machine-calf-raise.jpg', muscle_group: quads
-
-
-shoulders = MuscleGroup.create! name: 'Shoulders', img_url: 'muscle_groups/shoulders/7_shoulders.png'
- Workout.create! name: 'BOCRDF', img_url: 'muscle_groups/shoulders/70_bent-over-cable-rear-delt-fly.jpg', muscle_group: shoulders
- Workout.create! name: 'DLR', img_url: 'muscle_groups/shoulders/71_dumbbell-lateral-raise.jpg', muscle_group: shoulders
- Workout.create! name: 'MOP', img_url: 'muscle_groups/shoulders/72_military-overhead-press.jpg', muscle_group: shoulders
-
-
-triceps = MuscleGroup.create! name: 'Triceps', img_url: 'muscle_groups/triceps/8_triceps.png'
- Workout.create! name: 'EBSC', img_url: 'muscle_groups/triceps/80-ez-bar-skullcrusher.jpg', muscle_group: triceps
- Workout.create! name: 'RTE', img_url: 'muscle_groups/triceps/81_rope-tricep-extension-1.jpg', muscle_group: triceps
- Workout.create! name: 'SODTE', img_url: 'muscle_groups/triceps/82_seated-overhead-dumbbell-tricep-extension.jpg', muscle_group: triceps
+triceps = MuscleGroup.create! name: 'Triceps', img_url: 'muscle_groups/triceps/8_triceps.png', description: 'The triceps muscles are essential for elbow extension and overall upper arm strength, involved in pushing and lifting movements.'
+Workout.create! name: 'Ez Bar SkullCrusher', img_url: 'muscle_groups/triceps/80_ez-bar-skullcrusher.jpg', muscle_group: triceps, description: 'Ez bar skull crushers effectively target the triceps, helping to increase arm strength and size by isolating the triceps muscles.'
+Workout.create! name: 'Rope Tricep Extension', img_url: 'muscle_groups/triceps/81_rope-tricep-extension-1.jpg', muscle_group: triceps, description: 'Rope tricep extensions are a great exercise for isolating the triceps, improving arm strength and muscle definition with a full range of motion.'
+Workout.create! name: 'Seated Overhead Dumbbell Tricep Extension', img_url: 'muscle_groups/triceps/82_seated-overhead-dumbbell-tricep-extension_0.jpg', muscle_group: triceps, description: 'Seated overhead dumbbell tricep extensions focus on the long head of the triceps, enhancing upper arm strength and overall tricep development.'
