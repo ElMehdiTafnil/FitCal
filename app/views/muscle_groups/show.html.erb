@@ -1,10 +1,14 @@
-<h1><%= @muscle_group.name %> Workouts</h1>
-<div class="workouts">
-  <% @workouts.each do |workout| %>
-    <div class="workout">
-      <h2><%= workout.name %></h2>
-      <%= image_tag workout.img_url, alt: workout.name %>
-      <p><%= workout.description %></p>
-    </div>
-  <% end %>
+ <div class="cntainer">
+  <div class="workouts">
+    <h1><%= @muscle_group.name %> Workouts</h1>
+    <% @workouts.each do |workout| %>
+      <div class="workout">
+        <%= image_tag workout.img_url, alt: workout.name, class: 'workout-img' %>
+        <div class="workout-content">
+          <h2><%= workout.name %></h2>
+          <p><%= workout.description %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

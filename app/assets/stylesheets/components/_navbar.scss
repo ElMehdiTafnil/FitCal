@@ -9,11 +9,23 @@
   font-weight: 700;
 }
 
+#workout-nav {
+  padding-right: 16px;
+}
+
+.navbar-brand:hover {
+  color: white;
+}
+
 .nav-link {
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
   transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff; /* Ensures color remains white on hover */
 }
 
 .navbar-lewagon .navbar-collapse {
