@@ -1,3 +1,6 @@
+MuscleGroup.destroy_all
+Workout.destroy_all
+
 chest = MuscleGroup.create! name: 'Chest', img_url: 'muscle_groups/chest/4_chest.png', description: 'The chest muscles, or pectorals, are crucial for upper body strength and are engaged in movements like pushing and lifting.'
 Workout.create! name: 'Dip', img_url: 'muscle_groups/chest/40_chest-dip.jpg', muscle_group: chest, description: 'Dips are a bodyweight exercise that targets the chest, shoulders, and triceps, improving upper body strength and muscle mass.'
 Workout.create! name: 'Dumbbell Bench Press', img_url: 'muscle_groups/chest/41_dumbbell-bench-press_0.jpg', muscle_group: chest, description: 'The dumbbell bench press focuses on building chest strength and size by allowing for a greater range of motion compared to the barbell version.'

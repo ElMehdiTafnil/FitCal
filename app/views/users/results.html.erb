@@ -5,12 +5,16 @@
     </div>
     <div class="result-container">
       <div class="result">
-        <label>BMR (Basal Metabolic Rate):</label>
+        <label>BMR (Basal Metabolic Rate):
+        <i class="info-icon" data-tooltip="Your BMR is the number of calories your body needs to maintain basic physiological functions while at rest.">ℹ️</i>
+        </label>
         <span><%= @bmr %></span>
       </div>
       <div class="divider"></div>
       <div class="result">
-        <label>TDEE (Total Daily Energy Expenditure):</label>
+        <label>TDEE (Total Daily Energy Expenditure):
+        <i class="info-icon" data-tooltip="Your TDEE is the total number of calories you need to maintain your current weight, considering all activities throughout the day.">ℹ️</i>
+        </label>
         <span><%= @tdee %></span>
       </div>
     </div>

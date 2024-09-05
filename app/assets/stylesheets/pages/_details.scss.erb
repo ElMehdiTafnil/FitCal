@@ -7,6 +7,45 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
+
+.info-icon {
+  margin-left: 3px; /* Space between icon and label text */
+  cursor: pointer;
+  position: relative;
+  font-size: 13px; /* Adjust icon size as needed */
+  width: 20px; /* Set width for the circle */
+  height: 20px; /* Set height for the circle */
+  display: flex;
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+  background-color: black; /* Background color of the circle */
+  color: #fff; /* Icon color */
+  border-radius: 50%; /* Make it a circle */
+  text-align: center;
+}
+
+.info-icon::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+}
+
+.info-icon:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
 .result, .macronutrient {
   margin-bottom: 20px;
 }
@@ -17,10 +56,10 @@
 }
 
 .result label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 15px;
-  margin-top: 10px;
+  display: flex; /* Use Flexbox inside label */
+  align-items: center; /* Center items vertically */
+  margin-right: 10px; /* Space between label and value */
+  margin-top: 20px;
 }
 .macronutrient span {
   display: block;
