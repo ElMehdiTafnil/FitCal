@@ -163,7 +163,7 @@ nav ul li a:hover {
 .step {
  width: 15rem;
  height: 17rem;
- background-color: transparent;
+ background-color: hsla(0, 0%, 0%, 0.3);
  border-radius: 1rem;
  transition: all 0.4s ease-in;
  box-shadow: 0.4rem 0.4rem 0.6rem #00000040;
@@ -174,7 +174,6 @@ nav ul li a:hover {
  justify-content: center;
  text-align: center;
  padding: 1rem;
- border: white 0.2em solid;
 }
 
 .step h3 {
@@ -200,6 +199,10 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-image: url('<%= asset_path('muscular-man.png') %>'); /* Replace with your image file */
+  background-size: 700px 800px; /* Ensure the background image covers the entire area */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: left bottom;
 }
 
 .feature-logo {
@@ -220,12 +223,13 @@ h2, #features {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 20px;
+  margin-bottom: 150px;
 }
 
 .feature {
   width: 12.5rem;
   height: 17rem;
-  background-color: transparent;
+  background-color: hsla(0, 0%, 0%, 0.3);
   border-radius: 1rem;
   transition: all 0.4s ease-in;
   margin: 2rem;
@@ -245,18 +249,7 @@ h2, #features {
 #features h2 {
     position: relative;
     text-align: center;
-    margin-bottom: 30px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -120px; // Adjust as needed
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px; // Adjust as needed
-      height: 2px; // Adjust as needed
-      background-color: #fff; // Adjust the color as needed
-    }
+    margin-bottom: 100px;
   }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
@@ -489,3 +482,152 @@ footer nav ul li a:hover {
   height: 128px;
   width: 128px;
 }
+
+@media (max-width: 768px) {
+  #how-it-works, #features {
+    height: auto; /* Allow sections to adjust height based on content */
+    padding: 20px; /* Add padding for better spacing */
+  }
+
+  #how-it-works .steps, #features .feature-boxes {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .step, .feature {
+    width: 90%; /* Adjust width to fit smaller screens */
+    margin: 10px 0; /* Adjust margin for better spacing */
+  }
+
+  .hero-text h1 {
+    font-size: 36px; /* Reduce font size for smaller screens */
+  }
+
+  .hero-text p {
+    font-size: 18px; /* Reduce font size for smaller screens */
+  }
+
+  .cta-button {
+    padding: 10px 20px; /* Adjust button size for smaller screens */
+  }
+}
+/* For small laptops (up to 1280px) */
+@media (max-width: 1280px) {
+  #how-it-works, #features {
+    height: auto; /* Allow sections to adjust height based on content */
+    padding: 40px 20px; /* Adjust padding for better spacing */
+  }
+
+  #how-it-works .steps, #features .feature-boxes {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .step, .feature {
+    width: 90%; /* Adjust width to fit smaller screens */
+    margin: 15px 0; /* Adjust margin for better spacing */
+  }
+
+  .hero-text h1 {
+    font-size: 42px; /* Reduce font size for smaller laptops */
+  }
+
+  .hero-text p {
+    font-size: 18px; /* Reduce font size for smaller laptops */
+  }
+
+  .cta-button {
+    padding: 12px 25px; /* Adjust button size for smaller screens */
+  }
+}
+
+/* For normal laptops (1366px to 1440px) */
+@media (min-width: 1366px) and (max-width: 1440px) {
+  #how-it-works, #features {
+    height: auto; /* Allow sections to adjust height based on content */
+    padding: 60px 30px; /* Adjust padding for better spacing */
+  }
+
+  #how-it-works .steps, #features .feature-boxes {
+    flex-direction: row; /* Arrange items in a row layout */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items horizontally */
+  }
+
+  .step, .feature {
+    width: 30%; /* Adjust width to fit normal laptop screens */
+    margin: 20px; /* Adjust margin for better spacing */
+  }
+
+  .hero-text h1 {
+    font-size: 44px; /* Adjust font size for normal laptops */
+  }
+
+  .hero-text p {
+    font-size: 20px; /* Adjust font size for normal laptops */
+  }
+
+  .cta-button {
+    padding: 15px 30px; /* Adjust button size for normal laptops */
+  }
+}
+/* For laptops with screen width between 1280px and 1365px */
+@media (min-width: 1280px) and (max-width: 1365px) {
+  #how-it-works, #features {
+    height: auto; /* Allow sections to adjust height based on content */
+    padding: 60px 20px; /* Adjust padding for better spacing */
+  }
+
+  #how-it-works .steps, #features .feature-boxes {
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-around; /* Space items around */
+  }
+
+  .step, .feature {
+    width: 45%; /* Adjust width for a better fit */
+    margin: 10px; /* Adjust margin for better spacing */
+  }
+
+  .hero-text h1 {
+    font-size: 40px; /* Adjust font size for smaller screens */
+  }
+
+  .hero-text p {
+    font-size: 18px; /* Adjust font size for smaller screens */
+  }
+
+  .cta-button {
+    padding: 12px 24px; /* Adjust button size for smaller screens */
+  }
+}
+
+/* For small laptops (up to 1280px) */
+@media (max-width: 1280px) {
+  #how-it-works, #features {
+    height: auto; /* Allow sections to adjust height based on content */
+    padding: 40px 20px; /* Adjust padding for better spacing */
+  }
+
+  #how-it-works .steps, #features .feature-boxes {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .step, .feature {
+    width: 80%; /* Adjust width to fit smaller screens */
+    margin: 15px 0; /* Adjust margin for better spacing */
+  }
+
+  .hero-text h1 {
+    font-size: 36px; /* Reduce font size for smaller laptops */
+  }
+
+  .hero-text p {
+    font-size: 16px; /* Reduce font size for smaller laptops */
+  }
+
+  .cta-button {
+    padding: 10px 20px; /* Adjust button size for smaller screens */
+  }
+}
+
